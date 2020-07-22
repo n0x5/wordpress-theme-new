@@ -68,7 +68,7 @@ font-size: 12px;
 
 
 <center><img width="300" src="/wp-content/themes/next/images/logo.jpg" /></center>
-<div class="descr">Galleries of beautiful girls.</div>
+<div class="descr">Galleries</div>
 
 
 <?php get_search_form(); ?>
