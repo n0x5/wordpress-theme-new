@@ -51,7 +51,7 @@ global $wpdb;
 
 $wild = '%';
 $fin = $wild . $wpdb->esc_like($srch) . $wild;
-$result  = $wpdb->get_results($wpdb->prepare( "SELECT * FROM  $wpdb->posts WHERE post_type = 'attachment' and SUBSTR(guid, 45) LIKE %s ORDER BY id desc", $fin));
+$result  = $wpdb->get_results($wpdb->prepare( "SELECT * FROM  $wpdb->posts WHERE post_type = 'attachment' and SUBSTR(guid, 45) LIKE replace(%s, ' ', '%') ORDER BY id desc", $fin));
 $count = count($result);
 $cur_dir = getcwd();
 //echo $cur_dir;
