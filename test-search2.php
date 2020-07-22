@@ -7,7 +7,7 @@ Template Name: Search Page Template Test 2
 <p><a href="/">Home</a></p>
 
 <?php
-echo "<form method='post' action='/?page_id=20794'>";
+echo "<form method='post' action='/?page_id=10734'>";
 echo "<div><input type='text' name='fname' placeholder='File name'>";
 echo "<input type='submit'>";
 echo "</div>";
