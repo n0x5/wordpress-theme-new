@@ -82,7 +82,7 @@ echo "</form>";
 
 <div class="lists">
 <div class="categoryl">
-<a class="titlecat" href="https://website.com/?cat=2"><h1>Instagram models</a>
+<a class="titlecat" href="https://website.com/?cat=2"><h1>I models</a>
 <p class="recent">Recently updated galleries on top</p>
 (<?php $category = get_category(2); $count = $category->category_count; if( $count > $something ) { echo $count; } ?> galleries)<h1>
 
@@ -98,7 +98,7 @@ echo "</form>";
 
 <div class="lists">
 <div class="categoryl">
-<a class="titlecat" href="https://website.com/?cat=7"><h1>Instagram models teens</a>
+<a class="titlecat" href="https://website.com/?cat=7"><h1>I models teens</a>
 <p class="recent">Recently updated galleries on top</p>
 (<?php $category = get_category(7); $count = $category->category_count; if( $count > $something ) { echo $count; } ?> galleries)<h1>
 
@@ -115,7 +115,7 @@ echo "</form>";
 
 <div class="lists">
 <div class="categoryl">
-<a class="titlecat" href="https://website.com/?cat=3"><h1>Instagram archives</a>
+<a class="titlecat" href="https://website.com/?cat=3"><h1>I archives</a>
 (<?php $category = get_category(3); $count = $category->category_count; if( $count > $something ) { echo $count; } ?> galleries)<h1>
 
 <?php
@@ -161,7 +161,7 @@ echo "</form>";
 
 <div class="lists">
 <div class="categoryl">
-<a class="titlecat" href="https://website.com/?cat=12"><h1>Teenmodeling.tv</a>
+<a class="titlecat" href="https://website.com/?cat=12"><h1>Teenmodelingtv</a>
 (<?php $category = get_category(12); $count = $category->category_count; if( $count > $something ) { echo $count; } ?> galleries)<h1>
 
 <?php
@@ -176,7 +176,7 @@ echo "</form>";
 
 <div class="lists">
 <div class="categoryl">
-<a class="titlecat" href="https://website.com/?cat=14"><h1>Silver (all studios)</a>
+<a class="titlecat" href="https://website.com/?cat=14"><h1>Silver</a>
 (<?php $category = get_category(14); $count = $category->category_count; if( $count > $something ) { echo $count; } ?> galleries)<h1>
 
 <?php
