@@ -26,7 +26,7 @@ echo "search term: $srch <br><br>";
 ?>
 
 <title><?php echo "$srch results page"; ?></title>
-<p><?php echo "<a href='/?page_id=20794&fname=$srch'>/?page_id=20794&fname=$srch<a><br><br>" ?>
+<p><?php echo "<a href='/?page_id=10734&fname=$srch'>/?page_id=10734&fname=$srch<a><br><br>" ?>
 
 
 <?php
