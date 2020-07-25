@@ -72,13 +72,13 @@ font-size: 12px;
 
 
 <?php get_search_form(); ?>
-<?php
-echo "<form method='post' action='/?page_id=20794'>";
-echo "<div><input style='margin-right: 4px;' type='text' name='fname' placeholder='File name'>";
-echo "<input type='submit' value='Search'>";
-echo "</div>";
-echo "</form>";
-?>
+
+<form method='post' action='/?page_id=20794'>
+<div><input type='text' name='fname' placeholder='File name'>
+<input type='submit'>
+</div>
+</form>
+
 
 <div class="lists">
 <div class="categoryl">
