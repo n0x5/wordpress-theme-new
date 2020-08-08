@@ -3,6 +3,14 @@ color: #E91E62;
 font-size: 14px;
 }
 
+.dimensions {
+	position: relative;
+    width: 100;
+    bottom: 15px;
+    background: white;
+    color: black;
+}
+
 .imgbox img {
 padding: 0px;
 background: #f2f2f2f2;

@@ -16,12 +16,12 @@ $query->set( 'cat', '-261' );
 
 add_action( 'pre_get_posts', 'exclude_category' );
 
-function releases_post_type() {
+function gls() {
 
     $labels = array(
-        'name'                => 'Releases',
-        'singular_name'       => 'Release',
-        'menu_name'           => 'Releases',
+        'name'                => 'gls',
+        'singular_name'       => 'gl',
+        'menu_name'           => 'gls DB',
         'parent_item_colon'   => 'Parent Item:',
         'all_items'           => 'All Items',
         'view_item'           => 'View Item',
@@ -34,7 +34,7 @@ function releases_post_type() {
         'not_found_in_trash'  => 'Not found in Trash',
     );
     $args = array(
-        'label'               => 'releases_post_type',
+        'label'               => 'gls',
         'description'         => 'Post Type Description',
         'labels'              => $labels,
         'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'custom-fields', 'page-attributes', 'post-formats', ),
@@ -46,19 +46,20 @@ function releases_post_type() {
         'show_in_nav_menus'   => true,
         'show_in_admin_bar'   => true,
         'menu_position'       => 5,
-        'menu_icon'           => 'dashicons-format-audio',
+        'menu_icon'           => 'dashicons-heart',
         'can_export'          => true,
         'has_archive'         => true,
         'exclude_from_search' => false,
         'publicly_queryable'  => true,
         'capability_type'     => 'page',
+		'show_in_rest' => true,
     );
-    register_post_type( 'releases_post_type', $args );
+    register_post_type( 'gls', $args );
 
 }
 
 // Hook into the 'init' action
-add_action( 'init', 'releases_post_type', 0 );
+add_action( 'init', 'gls', 0 );
 
 remove_shortcode('gallery', 'gallery_shortcode');
 add_shortcode('gallery', 'custom_gallery');
@@ -116,13 +117,20 @@ function custom_gallery($attr) {
 	$output = apply_filters( 'gallery_style', $gallery_style . "\n\t\t" . $gallery_div );
 	foreach ( $attachments as $id => $attachment ) {
                  $lr3nfo = wp_get_attachment_metadata($id);
-                 $lr2nfo = "$lr3nfo[width] x $lr3nfo[height]";	
+                 $lr2nfo = "$lr3nfo[width] x $lr3nfo[height]";
+				 $lr5nfo = $lr3nfo[file];
+		         $lr6nfo = substr($lr5nfo, strpos($lr5nfo, "/") + 1);
+		         $lr4nfo = substr($lr6nfo, strpos($lr6nfo, "/") + 1);
+		         $trunc_nfo = $string = substr($lr4nfo,0,40);
 		$link = wp_get_attachment_link($id, 'medium', false, false);
+
 		
 		$output .= "
-			
-                         <div class='imgc'>
+			             
+                         <div class='imgr'>
+						 <div class=\"filename\">$trunc_nfo</div>
 				$link <div class=\"dimensions\">$lr2nfo</div>
+				      
 			</div>";
 	
 		$output .= "";
@@ -141,3 +149,4 @@ function all_settings_link() {
     add_options_page(__('All Settings'), __('All Settings'), 'administrator', 'options.php');
    }
 add_action('admin_menu', 'all_settings_link');
+
