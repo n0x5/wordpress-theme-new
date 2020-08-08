@@ -1,57 +1,74 @@
-<?php get_header(); ?>
-<div id="main">
-	<?php if (have_posts()) : ?>
-		<h2 class="pagetitle"><?php _e("Search Results"); ?></h2>
-	<?php while (have_posts()) : the_post(); ?>
-	<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
-<div id="content">
-		
-             
-		<div class="entry">
-			<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h2>
-<?php
-
-$firstname = explode(" ",the_title('','',false));
-$firstname1 = $firstname[0]._.$firstname[1]._.$post->ID;
-$lastname = $firstname[1];
-$title = $firstname1;
-$zipname1 = "$title.zip";
-$time2 = get_post_time('Y/m');
-$uploads = wp_upload_dir($time2);
-$uploa3 = $uploads['path'];
-$uploa3url = $uploads['url'];
-$zipname = "$uploa3/$zipname1";
-$zipnameurl = "$uploa3url";
-
-if (file_exists($zipname)) {
-  echo "<div class=\"zipit\"><a href=\"$zipnameurl/$firstname1.zip\">$firstname1.zip</a></div>";
-
-} else {
-echo "<div class=\"zipit\">Zip file not created, click on post to create one!</div>";
+<link rel='stylesheet' id='spooky-fonts-css'  href='https://fonts.googleapis.com/css?family=IM%20Fell%20English&#038;subset=latin' type='text/css' media='all' />
+<body>
+<style type="text/css">
+body {
+background-color: white;
+color: black;
+font-family: 'IM Fell English', serif !important;
+}
+.post-entry {
+}
+.categoryl {
+float: left;
+margin: 12px;
+}
+.grid-item {
+}
+a.titlecat {
+font-size: 30px;
+color: #e91e63;
+}
+a {
+text-decoration: none;
+font-size: 20px;
+color: black;
+}
+.headtitle {
+text-align: center;
+font-size: 80px;
+}
+.descr {
+text-align: center;
+font-size: 20px;
+}
+.lists {
+/*width: 960px;
+padding-left: 410;*/
+}
+h2.post1 {
+width: 160px;
+float: left;
 }
 
-?>
+</style>
+<title><?php the_archive_title(); ?> >> Found</title>
+
+<div class="headtitle">Found</div>
 
 
+<div class="lists">
+<div class="navigation">
+		<div class="alignleft"><?php next_posts_link('&laquo; Older galleries') ?></div>
+		<div class="alignright"><?php previous_posts_link('Newer galleries &raquo;') ?></div>
+</div>	
 
-			<div class="post-entry"> <?php  the_content('>> See gallery');  ?></div>
+<?php // the_posts_pagination(); ?>
 
-<div class="gallery">
-
-		
-		
-               <div class="metatitle1"><?php the_time('F jS, Y g:i a') ?> <?php the_category(', '); ?> </div>
-		</div>
-
-	</div>
-	</div>
-        </div>
+<div class="titlecat"><a class="titlecat" href="https://found.com"><h1>Home</a> > <?php the_category(', '); ?></div>
+	<?php if (have_posts()) : ?>
+	   
+       
+     
+	<?php while (have_posts()) : the_post(); ?>
+    <div class="categoryl">
+			
+            <h2><a href="<?php the_permalink(); ?>"><?php echo get_the_post_thumbnail( $post_id, 'thumbnail', array( 'class' => 'alignleft' ) ); ?><?php the_title(); ?></a></h2>
+	
+     </div>
 	<?php endwhile; ?>
-	<div class="navigation">
-		<div class="alignleft"><?php next_posts_link('&laquo; Older Entries') ?></div>
-		<div class="alignright"><?php previous_posts_link('Newer Entries &raquo;') ?></div>
-		
-	</div>
+	
 	<?php endif; ?>
-</div>
-<?php get_footer(); ?>
+	
+	</div>
+
+</body>

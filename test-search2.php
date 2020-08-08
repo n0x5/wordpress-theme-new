@@ -6,11 +6,14 @@ Template Name: Search Page Template Test 2
 
 <p><a href="/">Home</a></p>
 
+
 <form method='post' action='/?page_id=20794'>
 <div><input type='text' name='fname' placeholder='File name'>
 <input type='submit'>
 </div>
 </form>
+
+
 
 
 <?php
@@ -24,7 +27,7 @@ echo "search term: $srch <br><br>";
 ?>
 
 <title><?php echo "$srch results page"; ?></title>
-<p><?php echo "<a href='/?page_id=10734&fname=$srch'>/?page_id=10734&fname=$srch<a><br><br>" ?>
+<p><?php echo "<a href='/?page_id=20794&fname=$srch'>/?page_id=20794&fname=$srch<a><br><br>" ?>
 
 
 <?php
@@ -51,6 +54,7 @@ $wild = '%';
 $fin = $wild . $wpdb->esc_like($srch) . $wild;
 $sql = "SELECT * FROM  $wpdb->posts WHERE post_type = 'attachment' and SUBSTR(guid, 45) LIKE replace(%s, ' ', '%') ORDER BY id desc";
 $result  = $wpdb->get_results($wpdb->prepare($sql, $fin));
+
 $count = count($result);
 $cur_dir = getcwd();
 //echo $cur_dir;
@@ -62,6 +66,8 @@ foreach ( $result as $posts ) {
       $width = $attachment_data_array['width'];
       $height = $attachment_data_array['height'];
       $file = $attachment_data_array['file'];
+      $caption = $attachment_data_array['image_meta']['caption'];
+      $copyright = $attachment_data_array['image_meta']['copyright'];
       $aperture = $attachment_data_array['image_meta']['aperture'];
       $camera = $attachment_data_array['image_meta']['camera'];
       $time = $attachment_data_array['image_meta']['created_timestamp'];
@@ -79,7 +85,7 @@ foreach ( $result as $posts ) {
    $fsize1 = filesize($file2);
    $fsize = formatBytes($fsize1);
    foreach ($keywords as $columnName => $columnData);
-   echo "<a href='$posts->guid'><img height='230' src='$posts->guid' /></a>File: $file, Dimensions: $width x $height, File size: $fsize, Title: $title, Camera: $camera, Date: $time2, Keywords: $keywords2, $columnData, Credit: $credit";
+   echo "<a href='$posts->guid'><img height='230' src='$posts->guid' /></a>File: $file, Dimensions: $width x $height, File size: $fsize, Title: $title, Caption: $caption, Copyright: $copyright, Camera: $camera, Date: $time2, Keywords: $keywords2, $columnData, Credit: $credit";
    echo " <a href='?p=$posts->post_parent'>?p=$posts->post_parent<a/><br><br>";
 }
 ?>

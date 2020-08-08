@@ -83,6 +83,7 @@ foreach ( $result as $posts ) {
    }
    $file2 = $cur_dir . '/wp-content/uploads/' . $file;
    $fsize1 = filesize($file2);
+//   $fsize = formatBytes($fsize1);
    $tsize += $fsize1;
 }
 $tsize2 = formatBytes($tsize);

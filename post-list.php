@@ -7,11 +7,11 @@ Template Name: Post List Index
 
 <?php /* get_header(); */ ?>
 
-<title>website - descr</title>
+<title>Found </title>
 
 
-<center><img width="300" src="/wp-content/themes/theme/images/logo.jpg" />
-<div class="descr">stuff</div>
+<center><img width="300" src="/wp-content/themes/found/images/logo.jpg" />
+<div class="descr">Galleries</div>
 <p><a href="/">Home</a></p>
 <h1>List of all posts</h2>
 
@@ -26,7 +26,7 @@ echo "</form>";
 
 <div class="lists">
 <div class="categoryl">
-<p class="recent">Recently updated</p>
+<p class="recent">Recent updated</p>
 
 <?php
     $args = array( 'category' => -1, 'post_type' => 'post', 'orderby' => 'modified', 'order' => 'DESC', 'numberposts' => '-1' );

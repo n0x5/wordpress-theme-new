@@ -2,8 +2,8 @@
 <body>
 <style type="text/css">
 body {
-background-color: black;
-color: white;
+background-color: white;
+color: black;
 font-family: 'IM Fell English', serif !important;
 }
 .post-entry {
@@ -19,8 +19,9 @@ font-size: 30px;
 color: #e91e63;
 }
 a {
+text-decoration: none;
 font-size: 20px;
-color: white;
+color: black;
 }
 .headtitle {
 text-align: center;
@@ -40,9 +41,9 @@ float: left;
 }
 
 </style>
-<title><?php the_archive_title(); ?> >> Found </title>
+<title><?php the_archive_title(); ?> >> Found</title>
 
-<div class="headtitle">Found </div>
+<div class="headtitle">Found</div>
 
 
 <div class="lists">
@@ -51,7 +52,9 @@ float: left;
 		<div class="alignright"><?php previous_posts_link('Newer galleries &raquo;') ?></div>
 </div>	
 
-<div class="titlecat"><a class="titlecat" href="https://fo.com"><h1>Home</a> > <?php the_category(', '); ?></div>
+<?php // the_posts_pagination(); ?>
+
+<div class="titlecat"><a class="titlecat" href="https://found.com"><h1>Home</a> > <?php the_category(', '); ?></div>
 	<?php if (have_posts()) : ?>
 	   
        
