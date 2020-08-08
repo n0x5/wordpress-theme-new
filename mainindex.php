@@ -66,11 +66,11 @@ font-size: 12px;
 
 <?php /* get_header(); */ ?>
 
-<title>Found - Galleries of beautiful girls</title>
+<title>Found </title>
 
 
-<center><img width="300" src="/wp-content/themes/foun/images/fa-logo.jpg" /></center>
-<div class="descr">Galleries of beautiful girls.</div>
+<center><img width="300" src="/wp-content/themes/foun/images/logo.jpg" /></center>
+<div class="descr">Galleries</div>
 <body>
 
 <?php get_search_form(); ?>
@@ -87,7 +87,7 @@ font-size: 12px;
 <div class="lists">
 <div class="categoryl">
 <a class="titlecat" href="https://found.com/?cat=2"><h1>I models</a>
-<p class="recent">Recently updated galleries on top</p>
+<p class="recent">Recent updated </p>
 (<?php $category = get_category(2); $count = $category->category_count; if( $count > $something ) { echo $count; } ?> galleries)<h1>
 
 <?php
@@ -103,7 +103,7 @@ font-size: 12px;
 <div class="lists">
 <div class="categoryl">
 <a class="titlecat" href="https://found.com/?cat=7"><h1>I models teens</a>
-<p class="recent">Recently updated galleries on top</p>
+<p class="recent">Recent updated</p>
 (<?php $category = get_category(7); $count = $category->category_count; if( $count > $something ) { echo $count; } ?> galleries)<h1>
 
 <?php
@@ -215,7 +215,7 @@ font-size: 12px;
 
 <div class="lists">
 <div class="categoryl">
-<a class="titlecat" href="https://found.com/?cat=32"><h1>FTM Elizabeth</a>
+<a class="titlecat" href="https://found.com/?cat=32"><h1>FTM</a>
 (<?php $category = get_category(32); $count = $category->category_count; if( $count > $something ) { echo $count; } ?> galleries)<h1>
 
 <?php
