@@ -62,7 +62,7 @@ echo "Images found: $count <br><br>";
 foreach ( $result as $posts ) {
    $result2 = $wpdb->get_results("SELECT * FROM $wpdb->postmeta WHERE post_id = '$posts->ID'");
     foreach ( $result2 as $metastuff ) {
-      $attachment_data_array=unserialize($metastuff->meta_value);
+      $attachment_data_array = unserialize($metastuff->meta_value);
       $width = $attachment_data_array['width'];
       $height = $attachment_data_array['height'];
       $file = $attachment_data_array['file'];
