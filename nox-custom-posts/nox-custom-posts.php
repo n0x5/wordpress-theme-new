@@ -150,3 +150,40 @@ function all_settings_link() {
    }
 add_action('admin_menu', 'all_settings_link');
 
+function modify_attachment_link( $markup, $id, $size, $permalink, $icon, $text )
+
+{
+        $_post = get_post( $id );
+
+        if ( empty( $_post ) || ( 'attachment' !== $_post->post_type ) || ! wp_get_attachment_url( $_post->ID ) ) {
+                return __( 'Missing Attachment' );
+        }
+
+        $url = wp_get_attachment_url( $_post->ID );
+
+        if ( $permalink ) {
+                $url = get_attachment_link( $_post->ID );
+        }
+
+        if ( $text ) {
+                $link_text = $text;
+        } elseif ( $size && 'none' !== $size ) {
+                $link_text = wp_get_attachment_image( $_post->ID, $size, $icon, $attr );
+        } else {
+                $link_text = '';
+        }
+
+        if ( '' === trim( $link_text ) ) {
+                $link_text = $_post->post_title;
+        }
+
+        if ( '' === trim( $link_text ) ) {
+                $link_text = esc_html( pathinfo( get_attached_file( $_post->ID ), PATHINFO_FILENAME ) );
+        }
+
+        return "<a data-fancybox='gallery' href='" . esc_url( $url ) . "'>$link_text</a>";
+
+
+}
+
+add_filter( 'wp_get_attachment_link', 'modify_attachment_link', 10, 6 );
