@@ -187,3 +187,5 @@ function modify_attachment_link( $markup, $id, $size, $permalink, $icon, $text )
 }
 
 add_filter( 'wp_get_attachment_link', 'modify_attachment_link', 10, 6 );
+
+add_filter( 'big_image_size_threshold', '__return_false' );
